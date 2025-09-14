@@ -1,6 +1,6 @@
-import 'package:dates_classifier/screens/loader_ui.dart';
-import 'package:dates_classifier/screens/switchbutton.dart';
+import 'package:dates_classifier/screens/loader_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +19,15 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('ar'), 
+        Locale('AE'), 
+      ],
       home: const LoaderUi(),
     );
   }

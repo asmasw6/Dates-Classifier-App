@@ -31,19 +31,27 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 dev_dependencies:
   flutter_lints: ^4.0.0
-  flutter_native_splash: ^2.4.6
   flutter_test:
     sdk: flutter
   google_fonts: ^6.3.1
-  lottie: ^3.3.1
+  http: ^1.5.0
+  image_picker: ^1.2.0
+  path: ^1.9.1
+  sqflite: ^2.4.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
+  fonts:
+    - family: Beiruti
+      fonts:
+        - asset: assets/fonts/Beiruti/Beiruti-VariableFont_wght.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

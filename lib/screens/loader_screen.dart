@@ -1,7 +1,6 @@
-import 'package:dates_classifier/screens/switchbutton.dart';
+import 'package:dates_classifier/screens/tabbar_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 
@@ -18,9 +17,9 @@ class _LoaderUiState extends State<LoaderUi>
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 10), () {
+    Future.delayed(const Duration(seconds: 7), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const Switchbutton()),
+        MaterialPageRoute(builder: (context) => const TabBarScreen()),
       );
     });
   }
@@ -29,6 +28,8 @@ class _LoaderUiState extends State<LoaderUi>
   void dispose() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
         overlays: SystemUiOverlay.values);
+        super.dispose();
+        
   }
 
   @override
@@ -40,14 +41,15 @@ class _LoaderUiState extends State<LoaderUi>
         children: [
           Image.asset(
             'assets/loader/Datepalm3.gif',
-            width: 250,
-            height: 250,
+            width: 200,
+            height: 200,
             fit: BoxFit.contain,
           ),
           Text(
             "مُصنف التمور",
             style: GoogleFonts.elMessiri(
-              color: const Color.fromRGBO(139, 69, 19, 1),
+              color: const Color.fromARGB(255, 101, 50, 14),
+              //Color.fromRGBO(139, 69, 19, 1),
               fontSize: 50,
               fontWeight: FontWeight.bold,
               shadows: [
