@@ -25,7 +25,7 @@ static final PredictionService instance = PredictionService._internal();
         var responseData = await response.stream.bytesToString();
         var decoded = jsonDecode(responseData);
 
-        return decoded; // e.g. {"prediction": "Sukkari", "confidence": 0.95}
+        return decoded; // e.g. {"class": "Sukkari", "confidence": 0.95}
       } else {
         throw Exception("Error: ${response.statusCode}");
       }

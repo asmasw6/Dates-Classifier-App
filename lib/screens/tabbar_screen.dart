@@ -24,6 +24,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.white,
+            toolbarHeight: screenHeight * .10,
             bottom: TabBar(
               overlayColor: MaterialStateProperty.all(Colors.transparent),
               indicator: BoxDecoration(
@@ -42,8 +43,9 @@ class _TabBarScreenState extends State<TabBarScreen> {
                   icon: Icons.sticky_note_2_outlined,
                 )
               ],
-                indicatorColor: Colors.green[600], // change the grey line to green
-                indicatorWeight: 4.0, // height of the line
+                dividerColor: Colors.green[600],
+                dividerHeight: 1.0,
+
             ),
             title: Center(
               child: Text('🌴مُصنف التمور',

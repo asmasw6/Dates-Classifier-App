@@ -4,7 +4,8 @@ import 'package:dates_classifier/services/prediction_service.dart';
 import 'package:dates_classifier/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:intl/intl.dart'; // لعرض التاريخ بشكل مرتب
+import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class ClassifierScreen extends StatefulWidget {
@@ -27,6 +28,23 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
     if (_isPicking) return; // prevent multiple pickers
     _isPicking = true;
 
+    final Map<String, String> dateTranslations = {
+  "Ajwa": "عجوة",
+  "Galaxy": "جالكسي",
+  "Medjool": "مجدول",
+  "Meneifi": "منيفي",
+  "Nabtat Ali": "نبتة علي",
+  "Rutab": "رطب",
+  "Shaishe": "شيشة",
+  "Sokari": "سكري",
+  "Sugaey": "صقعي",
+};
+
+String toArabic(String englishName) {
+  return dateTranslations[englishName] ?? englishName;
+}
+
+
     setState(() {
       _isLoading = true;
       _result = null;
@@ -43,31 +61,26 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
         });
 
         // 🔹 استدعاء PredictionService
-      var result = await PredictionService.predictDate(File(pickedFile.path));
+        var result = await PredictionService.predictDate(File(pickedFile.path));
 
-      String prediction = result['class'];
-      String confidence = result['confidence'];
+        String prediction = toArabic(result['class']);
+        String confidence = result['confidence'];
 
-      // 🔹 تخزين في قاعدة البيانات
-      String now = DateFormat("yyyy-MM-dd HH:mm").format(DateTime.now());
-      await databaseService.insertHistory(
-        prediction: prediction,
-        confidence: confidence,
-        date: now,
-        imagePath: pickedFile.path,
-      );
+        // 🔹 تخزين في قاعدة البيانات
+        String now = DateFormat("yyyy-MM-dd HH:mm").format(DateTime.now());
+        await databaseService.insertHistory(
+          prediction: prediction,
+          confidence: confidence,
+          date: now,
+          imagePath: pickedFile.path,
+        );
 
-        /// 🔹 هنا تشغل الموديل (استبدلها باستدعاء الموديل الحقيقي)
         await Future.delayed(const Duration(seconds: 2));
-        //String predictionFacke = "Ajwa Dates 🌴"; // مثال تصنيف من الموديل
-        //String confidenceFacke = "95%"; // مثال تصنيف من الموديل
-
-       
 
         if (!mounted) return;
         setState(() {
           _isLoading = false;
-          _result = "$prediction Dates\nAccurcy: $confidence";
+          _result = "التصنيف: $prediction\nنسبة الثقة: $confidence";
         });
       } else {
         setState(() {
@@ -79,13 +92,10 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
-
-    /// double screenWidth = MediaQuery.of(context).size.width;
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Column(
       children: [
@@ -99,13 +109,16 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
             color: Colors.green[40],
           ),
           child: _isLoading
-              ? const Center(child: CircularProgressIndicator())
+              ? Center(
+                  child: CircularProgressIndicator(
+                  color: Colors.green[500],
+                ))
               : _imageFile != null
                   ? Image.file(
                       _imageFile!,
                       fit: BoxFit.cover,
-                      height: 240,
-                      width: 240,
+                      height: screenHeight * .1, // 240
+                      width: screenWidth * .1,
                     )
                   : Center(
                       child: Icon(
@@ -120,12 +133,14 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
         if (_result != null)
           Text(
             _result!,
-            style: const TextStyle(
-                fontSize: 18, fontWeight: FontWeight.bold, color: Colors.green),
+            style: GoogleFonts.beiruti(
+              fontSize: 24,
+              fontWeight: FontWeight.bold, color: Colors.green[600],
+            )
           ),
 
         SizedBox(
-          height: screenHeight * .066,
+          height: screenHeight * .03,
         ),
 
         // Buttons
@@ -150,34 +165,3 @@ class _ClassifierScreenState extends State<ClassifierScreen> {
     );
   }
 }
-
-
-/*
-  Future<void> _pickImage(ImageSource source) async {
-    setState(() {
-      _isLoading = true;
-      _result = null;
-    });
-
-    final pickedFile = await _picker.pickImage(source: source);
-
-    if (pickedFile != null) {
-      setState(() {
-        _imageFile = File(pickedFile.path);
-      });
-
-      // Simulate prediction delay
-      await Future.delayed(const Duration(seconds: 2));
-
-      setState(() {
-        _isLoading = false;
-        _result = "This looks like Ajwa Dates 🌴"; // Example result
-      });
-    } else {
-      setState(() {
-        _isLoading = false;
-      });
-    }
-  }
-
-  */

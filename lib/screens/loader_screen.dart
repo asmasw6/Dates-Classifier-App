@@ -48,8 +48,9 @@ class _LoaderUiState extends State<LoaderUi>
           Text(
             "مُصنف التمور",
             style: GoogleFonts.elMessiri(
-              color: const Color.fromARGB(255, 101, 50, 14),
+              color: const Color.fromARGB(255, 91, 60, 37),
               //Color.fromRGBO(139, 69, 19, 1),
+              //Color.fromARGB(255, 101, 50, 14)
               fontSize: 50,
               fontWeight: FontWeight.bold,
               shadows: [
