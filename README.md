@@ -58,24 +58,11 @@ google_fonts for Arabic-friendly fonts
 
 ## Screenshots
 
-**Spalsh Screen:**  
-![Splash Screen](screenshot/Splash.png) 
-
-**Main Classifier Screen:**  
-![Classifier Screen](screenshot/Home_page.png)  
-![Classifier Screen](screenshot/Home_page2.png)  
-
-**Classification Result:**  
-![Result Screen](screenshot/Home_page3.png)  
-
-**History Screen:**  
-![History Screen](screenshot/History_page.png)
-
 ### Splash Screen
 <img src="screenshot/Splash.png" width="300" />
 
 ### Main Classifier Screen
-<img src="screenshot/Home_page.png" width="300" /> 
+<img src="screenshot/Home_page.png" width="300" style="margin-right:10px;" /> 
 <img src="screenshot/Home_page2.png" width="300" />
 
 ### Classification Result
@@ -83,6 +70,8 @@ google_fonts for Arabic-friendly fonts
 
 ### History Screen
 <img src="screenshot/History_page.png" width="300" />
+
+
 
 ## 🔹 Use Cases
 
