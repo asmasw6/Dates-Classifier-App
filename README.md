@@ -62,8 +62,12 @@ google_fonts for Arabic-friendly fonts
 <img src="screenshot/Splash.png" width="200" />
 
 ### Main Classifier Screen
-<img src="screenshot/Home_page.png" width="200" style="margin-right:10px;" /> 
-<img src="screenshot/Home_page2.png" width="200" />
+<<table>
+<tr>
+  <td><img src="screenshot/Home_page.png" width="200" /></td>
+  <td><img src="screenshot/Home_page2.png" width="200" /></td>
+</tr>
+</table>
 
 ### Classification Result
 <img src="screenshot/Home_page3.png" width="200" />
