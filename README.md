@@ -1,27 +1,77 @@
 
+# 🌴 Dates Classifier App (dates_classifier)
+
+A Flutter application that classifies different types of dates using AI, showing confidence scores, and stores the results locally for easy reference.
+
+## ✨ Features
+
+📸 Capture or Pick Images: Upload a date image from the camera or gallery.
+
+🤖 AI-based Classification: Automatically detects the type of date and shows confidence score.
+
+💾 Local Storage: Save classification results with image and timestamp in a local database.
+
+📜 History List: Browse all past attempts with the ability to delete individual entries.
+
+🟢 Modern Design: Green theme colors and Arabic-friendly fonts (Google Fonts Beiruti).
+
+✅ Custom Scrollbar: Green-colored scrollbar on the right with spacing from the list items.
+
+## 🖼️ Screenshots & UI
+
+Main Classifier Screen:
+Shows the selected image in a container with a green border and options to pick from gallery or camera.
 
 
-# 📱 Date Classifier App (dates_classifier)
+Classification Result:
+Displays the date type in Arabic with confidence percentage, and a loading indicator while processing.
 
-The Date Classifier App is a mobile application built with Flutter that uses machine learning to classify different types of dates (palm fruits) from images. 🍃
 
-## 🔹 Features
+History Screen:
+A list of previous attempts with a swipe-to-delete feature and a green scrollbar on the right.
 
-Upload or capture an image of a date fruit.
 
-The app predicts the type of date from 9 different varieties.
+## UI Highlights:
 
-Displays the classification result with a confidence percentage.
+Smooth rounded containers for images.
 
-Simple and user-friendly interface.
+Buttons for camera and gallery clearly displayed.
 
-## 🔹 Tech Stack
+Arabic-friendly text for results and history.
 
-Frontend: Flutter
+Loading indicator appears only while awaiting the AI result.
 
-Backend/Model: TensorFlow / Keras (trained on a dataset of date images)
+## 🛠️ Technologies Used
 
-Integration: TensorFlow Lite for on-device inference
+Flutter 🐦
+
+Dart
+
+SQLite (sqflite) for local database storage
+
+image_picker 📸 for image selection
+
+intl for date formatting
+
+google_fonts for Arabic-friendly fonts
+
+
+## Screenshots
+
+**Spalsh Screen:**  
+![Splash Screen](screenshot/Splash.png) 
+
+**Main Classifier Screen:**  
+![Classifier Screen](screenshot/Home_page.png)  
+![Classifier Screen](screenshot/Home_page2.png)  
+
+**Classification Result:**  
+![Result Screen](screenshot/Home_page3.png)  
+
+**History Screen:**  
+![History Screen](screenshot/History_page.png)
+
+
 
 ## 🔹 Use Cases
 
