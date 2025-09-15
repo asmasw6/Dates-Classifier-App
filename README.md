@@ -62,7 +62,7 @@ google_fonts for Arabic-friendly fonts
 <img src="screenshot/Splash.png" width="200" />
 
 ### Main Classifier Screen
-<<table>
+<table>
 <tr>
   <td style="padding-right:20px;"><img src="screenshot/Home_page.png" width="200" /></td>
   <td><img src="screenshot/Home_page2.png" width="200" /></td>
