@@ -1,7 +1,6 @@
 import 'package:dates_classifier/models/history.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-//import 'dart:typed_data';
 
 
 class DatabaseService {
@@ -44,19 +43,7 @@ class DatabaseService {
     );
     return database;
   }
-/*
-  void addPredection(String content,) async{
-    final  db = await database;
-    await db.insert(historyTable, {
-      predictionColumnName: prediction,
-      dateColumnName: date,
-      imageColumnName: imagePath,
 
-
-    });
-
-  }
-  */
 
   Future<int> insertHistory({
     required String prediction,

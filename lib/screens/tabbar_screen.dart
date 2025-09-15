@@ -43,9 +43,8 @@ class _TabBarScreenState extends State<TabBarScreen> {
                   icon: Icons.sticky_note_2_outlined,
                 )
               ],
-                dividerColor: Colors.green[600],
-                dividerHeight: 1.0,
-
+              dividerColor: Colors.green[600],
+              dividerHeight: 1.0,
             ),
             title: Center(
               child: Text('🌴مُصنف التمور',
@@ -62,7 +61,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
               Center(
                 child: Padding(
                   padding: EdgeInsetsGeometry.symmetric(
-                      horizontal: screenWidth * .06,
+                      horizontal: screenWidth * .04,
                       vertical: screenHeight * .04),
                   child: const ClassifierScreen(),
                 ),
@@ -70,8 +69,8 @@ class _TabBarScreenState extends State<TabBarScreen> {
               Center(
                 child: Padding(
                   padding: EdgeInsetsGeometry.symmetric(
-                      horizontal: screenWidth * .06,
-                      vertical: screenHeight * .04),
+                      //horizontal: screenWidth * .06,
+                      vertical: screenHeight * .02),
                   child: const HistoryScreen(),
                 ),
               ),

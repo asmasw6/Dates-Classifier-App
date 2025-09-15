@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class RowLabel extends StatelessWidget {
   RowLabel({super.key, required this.icon, required this.text});
@@ -11,7 +13,13 @@ class RowLabel extends StatelessWidget {
       children: [
         Icon(icon, size: 20, color: Colors.green[500]),
         SizedBox(width: 5),
-        Text(text),
+        Text(
+        text,
+        style: GoogleFonts.beiruti(
+          fontSize: 18,
+          color: Colors.black,
+        ),
+      ),
       ],
     );
   }
