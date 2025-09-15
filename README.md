@@ -71,7 +71,18 @@ google_fonts for Arabic-friendly fonts
 **History Screen:**  
 ![History Screen](screenshot/History_page.png)
 
+### Splash Screen
+<img src="screenshot/Splash.png" width="300" />
 
+### Main Classifier Screen
+<img src="screenshot/Home_page.png" width="300" /> 
+<img src="screenshot/Home_page2.png" width="300" />
+
+### Classification Result
+<img src="screenshot/Home_page3.png" width="300" />
+
+### History Screen
+<img src="screenshot/History_page.png" width="300" />
 
 ## 🔹 Use Cases
 
