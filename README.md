@@ -59,17 +59,17 @@ google_fonts for Arabic-friendly fonts
 ## Screenshots
 
 ### Splash Screen
-<img src="screenshot/Splash.png" width="300" />
+<img src="screenshot/Splash.png" width="200" />
 
 ### Main Classifier Screen
-<img src="screenshot/Home_page.png" width="300" style="margin-right:10px;" /> 
-<img src="screenshot/Home_page2.png" width="300" />
+<img src="screenshot/Home_page.png" width="200" style="margin-right:10px;" /> 
+<img src="screenshot/Home_page2.png" width="200" />
 
 ### Classification Result
-<img src="screenshot/Home_page3.png" width="300" />
+<img src="screenshot/Home_page3.png" width="200" />
 
 ### History Screen
-<img src="screenshot/History_page.png" width="300" />
+<img src="screenshot/History_page.png" width="200" />
 
 
 
